@@ -1,5 +1,5 @@
 import React from 'react';
-import Client from "../Client.js";
+// import Client from "../Client.js";
 
 export default class Teams extends React.Component {
   _isMounted = false;
@@ -28,20 +28,24 @@ export default class Teams extends React.Component {
     });
 
     if (this._isMounted) {
-      this.getTeams(this.state.search);
+      if (newSearchValue === "") {
+        this.getTeams();
+      } else {
+        this.getTeams(newSearchValue);
+      }
     }
-    // if (this.state.search === "") {
-    //   this.setState({
-    //     teamResults: []
-    //   });
-    // } else {
-    //   Client.searchTeams(this.state.search)
-    //     .then(results => this.setState({ teamResults: results }));
-    // }
+  }
+
+  getAllTeams() {
+    fetch(`http://localhost:3001/api/teams`)
+      .then(res => res.json())
+      .then(teams => this.setState({ teamResults: teams }))
   }
 
   getTeams(query) {
-    fetch(`http://localhost:3001/teams`)
+    fetch(`http://localhost:3001/api/teams?q=${query}`, {
+      accept: "application/json"
+    })
       .then(res => res.json())
       .then(teams => this.setState({ teamResults: teams }))
   }
