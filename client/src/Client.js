@@ -1,10 +1,11 @@
-function searchTeams(query, cb) {
-  return fetch(`/teams?q=${query}`, {
-    accept: 'application/json', 
+function searchTeams(query) {
+  return fetch(`/api/teams?q=${query}`, {
+    accept: "application/json"
   })
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(cb);
+  .then(res => res.json())
+    // .then(checkStatus)
+    // .then(parseJSON)
+    // .then(cb);
 }
 
 function checkStatus(response) {
@@ -22,4 +23,5 @@ function parseJSON(response) {
   return response.json();
 }
 
+const Client = { searchTeams };
 export default Client;
