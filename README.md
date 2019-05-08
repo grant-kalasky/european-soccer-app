@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Overview
 
-## Available Scripts
+This is a web app that allows you to search for specific teams and players and view some of their statistics. The app was built using React, Express (MySQL), and Node.js. 
 
-In the project directory, you can run:
+### Running the App
 
-### `npm start`
+**Setup**
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before running the app, you should download the MySQL database [here](https://www.dropbox.com/s/ai44n0rmno4wary/mysqlconverted.zip?dl=0). Once you've downloaded the database, you can use [MySQL Workbench](https://www.mysql.com/products/workbench/) to locally host the database. Ensure that you've downloaded MySQL already and have set the root password.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Once in MySQL Workbench, choose the default MySQL Connection (local instance 3306). This is the port the app uses to connect to the  database. Enter your password for the MySQL instance. Once you've logged in, you can use `Command + U` (or Database -> Connect to Database) to create a new database. Type **soccer_db** into the "default schema" input field. (*It's important that you name the database properly, since all queries in the app assume this is the db name*). 
 
-### `npm test`
+Once you've created the schema, you can import data by running the SQL script provided in the link above. Refresh the local instance and you should see all the tables of the database in your `soccer_db` schema. 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Running the app**
 
-### `npm run build`
+Once you've properly setup your database, you can go to your terminal. Navigate to the top level of this directory and use the command: 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `npm start`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+to run the app in development mode. You can find the app at http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Questions, Comments, Concerns
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Feel free to reach out to me personally at grant.kalasky@berkeley.edu.
