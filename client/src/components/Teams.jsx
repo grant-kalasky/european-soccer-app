@@ -13,7 +13,6 @@ export default class Teams extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -64,7 +63,6 @@ export default class Teams extends React.Component {
             placeholder="Search for team..."
             value={this.state.search}
             onChange={this.handleChange}
-            onSubmit={this.handleSubmit}
           />
           <i className="search icon"></i>
         </div>
